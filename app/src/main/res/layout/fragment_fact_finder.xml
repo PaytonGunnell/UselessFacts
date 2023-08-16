@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="edu.dixietech.pgunnell.uselessfacts.fragments.factfinder.FactFinderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.factfinder.FactFinderFragment"
+            android:padding="10dp">
+
+        <TextView
+                android:id="@+id/fact_text"
+                style="@style/BoldFactTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.fact.text}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/buttons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            <com.google.android.material.button.MaterialButton
+                    style="@style/MaterialCenterIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    isFavoriteIcon="@{viewModel.fact.isFavorited}"
+                    android:onClick="@{() -> viewModel.favoriteFact()}"/>
+
+            <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next_fact"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.getRandomFact()}" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

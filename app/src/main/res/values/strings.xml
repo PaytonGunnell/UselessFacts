@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">UselessFacts</string>
+    <string name="next_fact">Next Fact</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="discover">Discover</string>
+    <string name="saved">Saved</string>
+    <string name="useless_facts_title">Useless\nFacts</string>
 </resources>
