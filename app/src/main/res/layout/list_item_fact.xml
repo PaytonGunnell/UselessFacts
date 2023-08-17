@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="fact"
+                type="edu.dixietech.pgunnell.uselessfacts.model.Fact" />
+        <variable
+                name="clickListener"
+                type="edu.dixietech.pgunnell.uselessfacts.fragments.favoritefacts.FavoriteFactsAdapter.ClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?colorPrimary"
+            app:cardElevation="5dp"
+            android:layout_margin="10dp"
+            android:onClick="@{() -> clickListener.onClick(fact.id)}">
+
+        <TextView
+                style="@style/BoldFactTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{fact.text}"
+                android:textColor="?colorOnPrimary"
+                android:layout_margin="10dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

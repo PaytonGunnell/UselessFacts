@@ -24,6 +24,11 @@ class HomeFragment : Fragment() {
                 .navigate(HomeFragmentDirections.actionHomeFragmentToFactFinderFragment())
         }
 
+        binding.savedButton.setOnClickListener {
+            findNavController()
+                .navigate(HomeFragmentDirections.actionHomeFragmentToFavoriteFactsFragment())
+        }
+
         return binding.root
     }
 }

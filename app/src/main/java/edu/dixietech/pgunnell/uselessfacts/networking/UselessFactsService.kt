@@ -10,7 +10,6 @@ import io.ktor.client.request.get
 import kotlinx.serialization.json.Json
 
 object UselessFactsService {
-
     private const val BASE_URL = "https://uselessfacts.jsph.pl/api/v2"
 
     private val client

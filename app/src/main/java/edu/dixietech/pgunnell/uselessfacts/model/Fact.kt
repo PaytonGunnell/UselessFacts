@@ -1,13 +1,17 @@
 package edu.dixietech.pgunnell.uselessfacts.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverter
 import edu.dixietech.pgunnell.uselessfacts.utils.URLSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.net.URL
 
 @Serializable
+@Entity("fact_table")
 data class Fact(
-    val id: String,
+    @PrimaryKey val id: String,
     val text: String,
     val source: String,
     @SerialName("source_url")
@@ -17,3 +21,4 @@ data class Fact(
 //    val language: String,
 //    val permalink: String
 )
+

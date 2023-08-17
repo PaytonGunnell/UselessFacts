@@ -15,5 +15,24 @@
         <action
                 android:id="@+id/action_homeFragment_to_factFinderFragment"
                 app:destination="@id/factFinderFragment" />
+        <action
+                android:id="@+id/action_homeFragment_to_favoriteFactsFragment"
+                app:destination="@id/favoriteFactsFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/favoriteFactsFragment"
+            android:name="edu.dixietech.pgunnell.uselessfacts.fragments.favoritefacts.FavoriteFactsFragment"
+            android:label="FavoriteFactsFragment" >
+        <action
+                android:id="@+id/action_favoriteFactsFragment_to_factDetailFragment"
+                app:destination="@id/factDetailFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/factDetailFragment"
+            android:name="edu.dixietech.pgunnell.uselessfacts.fragments.factdetail.FactDetailFragment"
+            android:label="FactDetailFragment" >
+        <argument
+                android:name="fact_id"
+                app:argType="string" />
     </fragment>
 </navigation>
