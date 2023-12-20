@@ -8,15 +8,26 @@
                 type="edu.dixietech.pgunnell.uselessfacts.model.Fact" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".fragments.factdetail.FactDetailFragment">
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp">
+        <TextView
+                android:id="@+id/fact_source"
+                style="@style/BoldFactTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?colorPrimary"
+                android:textAlignment="textStart"
+                android:linksClickable="true"/>
 
         <TextView
+            style="@style/BoldFactTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Hello" />
-
-    </FrameLayout>
+                android:layout_height="wrap_content"
+                android:textColor="?colorPrimary"
+            android:text="@{fact.text}"/>
+    </LinearLayout>
 </layout>

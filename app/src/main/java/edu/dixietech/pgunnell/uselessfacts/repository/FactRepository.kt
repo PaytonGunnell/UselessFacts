@@ -23,6 +23,12 @@ class FactRepository(
         }
     }
 
+    suspend fun getFactWithId(id: String): Fact {
+        return withContext(dispatcher) {
+            return@withContext database.dao.getFactWithId(id)
+        }
+    }
+
     suspend fun favoriteFact(fact: Fact) {
         withContext(dispatcher) {
             fact.isFavorited = true
